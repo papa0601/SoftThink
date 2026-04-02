@@ -8,4 +8,4 @@ for _ in range(test_case_num):
     scores = list(scores)
     avg = sum(scores) / student_num
     over_avg = (score > avg for score in scores)
-    print(f"{round(sum(over_avg) / student_num * 100, 3):.3f}%")
+    print(f"{(sum(over_avg) / student_num * 100, 3):.3f}%")
