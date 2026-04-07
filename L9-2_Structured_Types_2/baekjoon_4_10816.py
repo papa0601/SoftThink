@@ -1,11 +1,14 @@
+from collections import defaultdict
 import sys
 input = sys.stdin.readline
 
-capacity, btn_clicked = map(int, input().split())
-sugang = dict()
+card_count = defaultdict(int)
 
-for i in range(btn_clicked):
-    sugang[input().rstrip()] = i
+card_num = int(input().rstrip())
+cards = map(int, input().split())
 
-sugang_final = sorted(sugang.items(), key=lambda x: x[1])[:capacity]
-print(*[val[0] for val in sugang_final], sep='\n')
+for n in cards: card_count[n] += 1
+
+check_num = int(input().rstrip())
+checks = map(int, input().split())
+print(' '.join(str(card_count[n]) for n in checks))
