@@ -1,15 +1,5 @@
 import time
-from contextlib import contextmanager
-
-
-@contextmanager
-def check_time():
-    start_time = time.time()
-    try:
-        yield
-
-    finally:
-        print(f"took {((time.time() - start_time) * 1000):.5f}ms")
+import timecheck
 
 
 def gcd(a: int, b: int) -> int:
@@ -49,8 +39,9 @@ def fibo_for(n: int) -> int:
 
 if __name__ == "__main__":
     # print(gcd(6, 8))
-    with check_time():
+    with timecheck.check_time():
         print(f"fibo(5): {fibo(5)}")
+    print('\n')
 
-    with check_time():
+    with timecheck.check_time():
         print(f"fibo_for(5): {fibo_for(5)}")
