@@ -1,18 +1,13 @@
-'''BAEKJOON 1051: 숫자 정사각형'''
 import sys
 input = sys.stdin.readline
 
-n, m = map(int, input().split())
-square = list()
+n = int(input().rstrip())
 
-for _ in range(n):
-    square.append(list(map(int, input().rstrip())))
+c = 5
+p = 2
 
-for x in range(min(n, m), -1, -1):
-    for i in range(n-x):
-        for j in range(m-x):
-            if square[i][j] == square[i+x][j] == square[i][j+x] == square[i+x][j+x]:
-                print(pow((x+1), 2))
-                exit()
-            
-            
+for _ in range(n-1):
+    p += 1
+    c += 3*p -2
+
+print(c % 45678)
