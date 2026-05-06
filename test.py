@@ -1,13 +1,14 @@
-import sys
-input = sys.stdin.readline
+def print_matrix(matrix):
+    for line in matrix:
+        for element in line:
+            print(f'{element:5d}', end='')
+        print()
 
-n = int(input().rstrip())
+# 테스트 데이터
+test_matrix = [
+    [1, 23, 456],
+    [7890, 1, 2],
+    [10, 20, 30]
+]
 
-c = 5
-p = 2
-
-for _ in range(n-1):
-    p += 1
-    c += 3*p -2
-
-print(c % 45678)
+print_matrix(test_matrix)
