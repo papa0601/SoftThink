@@ -4,3 +4,5 @@
 /temp/
 tempCodeRunnerFile.py
 .env
+*/temp.*
+*/test.*
